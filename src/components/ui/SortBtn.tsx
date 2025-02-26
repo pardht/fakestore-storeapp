@@ -3,13 +3,10 @@
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import React from 'react';
+import { Option } from '@/types/index';
 
-type SortBtnProps = {
-    params: string;
-    name: string;
-};
 
-export default function SortBtn({ params, name }: SortBtnProps) {
+export default function SortBtn({ params, name }: Option) {
     const searchParams = useSearchParams();
     const sortInURL = searchParams.get('sort');
     const cateInURL = searchParams.get('category');

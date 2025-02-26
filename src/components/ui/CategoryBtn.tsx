@@ -1,14 +1,9 @@
 "use client";
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation';
+import { Option } from '@/types/index';
 
-
-type CategoryBtnProps = {
-  name: string;
-  params: string;
-}
-
-export default function CategoryBtn({ name, params }: CategoryBtnProps) {
+export default function CategoryBtn({ name, params }: Option) {
   const searchParams = useSearchParams();
   const cateInURL = searchParams.get('category');
   const sortInURL = searchParams.get('sort');

@@ -1,19 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { ProductCardProps } from '@/types/index';
 
-type ProductType = {
-    id: number,
-    title: string,
-    price: number,
-    description: string,
-    category: string,
-    image: string
-};
 
-type ProductCardProps = {
-    product: ProductType
-};
 
 export default function ProductCard({ product }: ProductCardProps) {
     return (

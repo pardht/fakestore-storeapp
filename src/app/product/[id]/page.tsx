@@ -1,15 +1,10 @@
 import ProductById from '@/components/ProductById'
 import React from 'react'
+import { ProductPageProps } from '@/types/index'
 
-type Params = {
-  id? : string
-}
 
-type QueryProps = {
-  params: Promise<Params>
-}
 
-export default async function page({ params }: QueryProps) {
+export default async function page({ params }: ProductPageProps) {
   const {id} = await params;
   return (
     <div>

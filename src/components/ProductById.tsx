@@ -1,14 +1,11 @@
 import { getProductById } from "@/lib/fetch";
 import Image from "next/image";
 import BackBtn from "./ui/BackBtn";
+import { ProductByIdProps } from "@/types/index";
 
-type QueryProps = {
-    params: {
-        id?: string
-    };
-};
 
-export default async function ProductPage({ params } : QueryProps) {
+
+export default async function ProductPage({ params } : ProductByIdProps) {
     const detail = await getProductById((await params).id);
 
     return (

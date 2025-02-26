@@ -1,10 +1,7 @@
 import Product from "@/components/Product";
+import { HomeProps } from "@/types";
 
-type QueryProps = {
-  searchParams: Promise<{category?: string}> & Promise<{sort?: string}>
-};
-
-export default async function Home({ searchParams }: QueryProps) {
+export default async function Home({ searchParams }: HomeProps) {
   const categoryInUrl = (await searchParams).category
   const sortInUrl = (await searchParams).sort
   return (
