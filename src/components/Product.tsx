@@ -4,6 +4,7 @@ import { getAllProductImproved } from '@/lib/fetch';
 
 type QueryProps = {
   category?: string;
+  sort?: string;
 };
 
 type ProductType = {
@@ -15,8 +16,8 @@ type ProductType = {
   image: string;
 };
 
-export default async function Product({ category }: QueryProps) {
-  const products: ProductType[] = await getAllProductImproved(category);
+export default async function Product({ category, sort }: QueryProps) {
+  const products: ProductType[] = await getAllProductImproved(category, sort);
 
   return (
     <div className="w-full h-auto grid grid-cols-4 gap-4">
