@@ -1,6 +1,6 @@
 import React from 'react'
 import ProductCard from './ui/ProductCard'
-import { getAllProductImproved, getLimitResults } from '@/lib/fetch';
+import { getAllProductImproved } from '@/lib/fetch';
 
 type QueryProps = {
     category?: string
