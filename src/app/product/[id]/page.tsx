@@ -1,16 +1,19 @@
 import ProductById from '@/components/ProductById'
 import React from 'react'
 
-type QueryProps = {
-  params: {
-    id?: string
-  };
+type Params = {
+  id? : string
 }
 
-export default function page({ params }: QueryProps) {
+type QueryProps = {
+  params: Promise<Params>
+}
+
+export default async function page({ params }: QueryProps) {
+  const {id} = await params;
   return (
     <div>
-      <ProductById params={params} />
+      <ProductById params={{id}} />
     </div>
   )
 }
