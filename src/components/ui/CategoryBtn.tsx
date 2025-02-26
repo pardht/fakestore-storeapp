@@ -12,6 +12,7 @@ export default function CategoryBtn({ name, params }: CategoryBtnProps) {
   const getCateInUrl = useSearchParams();
   const cate = getCateInUrl.get('category');
   const href = name === cate ? '/' : `/?category=${params}`;
+
   const XLogo = () => {
     return <span className='p-2 bg-red-500 rounded-full text-white'>x</span>
   }
