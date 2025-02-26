@@ -14,12 +14,12 @@ export default function SortBtn({ params, name }: SortBtnProps) {
     const sortInURL = searchParams.get('sort');
     const cateInURL = searchParams.get('category');
 
-    const isActive = sortInURL === name || (sortInURL === null && name === 'asc');
+    const isActive = sortInURL === params || (sortInURL === null && params === 'asc');
 
     const newSearchParams = new URLSearchParams();
     if (cateInURL) newSearchParams.set('category', cateInURL);
-    if (name === 'desc') newSearchParams.set('sort', params);
-    const href = name === 'asc' ? `/?${newSearchParams.toString()}` : name === 'desc' ? `/?${newSearchParams.toString()}` : ''
+    if (params === 'desc') newSearchParams.set('sort', params);
+    const href = params === 'asc' ? `/?${newSearchParams.toString()}` : params === 'desc' ? `/?${newSearchParams.toString()}` : ''
 
     return (
         <div>

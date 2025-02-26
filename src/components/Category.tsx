@@ -1,7 +1,8 @@
 import React, { Suspense } from 'react'
-import { getAllCategory } from '@/lib/fetch';
 import CategoryBtn from './ui/CategoryBtn';
 import SortBtn from './ui/SortBtn';
+import { sorts } from '../lib/sorts';
+import { categories } from '../lib/categories';
 
 function categoryLoading() {
     return (
@@ -12,18 +13,17 @@ function categoryLoading() {
 }
 
 export default async function Category() {
-    const categories: string[] = await getAllCategory();
-    const sorts = ['asc', 'desc'];
+
     return (
         <div className='p-3 flex flex-col gap-3 '>
-            Category :
             <Suspense fallback={categoryLoading()}>
+                Category :
                 {categories.map((category) => (
-                    <CategoryBtn key={category} params={category} name={category} />
+                    <CategoryBtn key={category.params} params={category.params} name={category.name} />
                 ))}
-                a
-                {sorts.map((sort)=>(
-                    <SortBtn key={sort} params={sort} name={sort}/>
+                Sort :
+                {sorts.map((sort) => (
+                    <SortBtn key={sort.params} params={sort.params} name={sort.name} />
                 ))}
             </Suspense>
         </div>

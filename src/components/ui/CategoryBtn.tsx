@@ -15,9 +15,9 @@ export default function CategoryBtn({ name, params }: CategoryBtnProps) {
 
   const newSearchParams = new URLSearchParams();
   if (sortInURL) newSearchParams.set('sort', sortInURL);
-  if (name !== cateInURL) newSearchParams.set('category', params);
+  if (params !== cateInURL) newSearchParams.set('category', params);
 
-  const href = name === cateInURL ? `/?${newSearchParams.toString()}` : `/?${newSearchParams.toString()}`;
+  const href = params === cateInURL ? `/?${newSearchParams.toString()}` : `/?${newSearchParams.toString()}`;
 
   const XLogo = () => {
     return <span className='p-2 bg-red-500 rounded-full text-white'>x</span>
@@ -25,9 +25,9 @@ export default function CategoryBtn({ name, params }: CategoryBtnProps) {
 
   return (
     <Link href={href} >
-      <button className={`rounded-[20px] p-3 bg-blue-200 text-black  hover:bg-blue-500 ${name === cateInURL ? "bg-blue-500" : ""}`}>
+      <button className={`rounded-[20px] p-3 bg-blue-200 text-black  hover:bg-blue-500 ${params === cateInURL ? "bg-blue-500" : ""}`}>
         {name}
-        {name === cateInURL ? <XLogo /> : ""}
+        {params === cateInURL ? <XLogo /> : ""}
       </button>
     </Link>
   )
