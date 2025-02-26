@@ -1,9 +1,7 @@
 import Product from "@/components/Product";
 
 type QueryProps = {
-  searchParams: {
-    category?: string
-  };
+  searchParams: Promise<{category?: string}>;
 };
 
 export default async function Home({ searchParams }: QueryProps) {
