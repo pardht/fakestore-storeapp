@@ -27,11 +27,9 @@ export type ProductCardProps = {
 };
 
 export type ProductByIdProps = {
-    params: {
-        id?: string
-    };
+    params: {id: string}
 };
 
 export type ProductPageProps = {
-    params: Promise<{id? : string}>
+    params: Promise<{id: string}>
   }
