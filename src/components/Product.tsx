@@ -2,13 +2,10 @@ import React from 'react';
 import ProductCard from './ui/ProductCard';
 import { getAllProductImproved } from '@/lib/fetch';
 import { ProductType, } from '@/types/index';
-type ProductProps = {
-  category?: string;
-  sort?: string;
-};
+import { ProductProps } from '@/types/index';
 
-export default async function Product({ category, sort }: ProductProps) {
-  const products: ProductType[] = await getAllProductImproved({category, sort});
+export default async function Product({ category, sort, limit }: ProductProps) {
+  const products: ProductType[] = await getAllProductImproved({category, sort, limit});
 
   return (
     <div className="w-full h-auto grid grid-cols-4 gap-4">
@@ -17,7 +14,7 @@ export default async function Product({ category, sort }: ProductProps) {
           <ProductCard key={product.id} product={product} />
         ))
       ) : (
-        <p>No products available</p> // Fallback UI
+        <p className='bg-sky-300 text-black'>gak nemu product gw </p> // Fallback UI
       )}
     </div>
   );
