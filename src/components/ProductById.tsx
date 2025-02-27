@@ -4,7 +4,6 @@ import BackBtn from "./ui/BackBtn";
 import { ProductByIdProps } from "@/types/index";
 
 
-
 export default async function ProductPage({ params } : ProductByIdProps) {
     const detail = await getProductById((await params).id);
 
