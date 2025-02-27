@@ -14,7 +14,7 @@ export async function getAllProductImproved({ category, sort, limit }: ProductPr
       url += `${limit && category ? '?' : '?' }sort=${sort}`;
     }
     if(limit) {
-      url += `${sort && category ? '&' : '?' }limit=${limit}`;
+      url += `${sort && category ? '&' : sort ? '&' : '?'}limit=${limit}`;
     }
     console.log('infetch', url)
     const res = await fetch(url);
