@@ -1,7 +1,6 @@
 export type HomeProps = {
-    searchParams: Promise<{category?: string}> & Promise<{sort?: string}>
+    searchParams: Promise<{category?: string}> & Promise<{sort?: string}> & Promise<{limit?: string}>
   };
-
 
 export type Option = {
     name : string;
@@ -16,10 +15,11 @@ export type ProductType = {
     category: string;
     image: string;
   };
-
+  
 export type ProductProps = {
     category?: string;
     sort?: string;
+    limit?: string;
   };
 
 export type ProductCardProps = {
