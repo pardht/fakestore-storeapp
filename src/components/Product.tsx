@@ -1,10 +1,14 @@
 import React from 'react';
 import ProductCard from './ui/ProductCard';
 import { getAllProductImproved } from '@/lib/fetch';
-import { ProductType, ProductProps } from '@/types/index';
+import { ProductType, } from '@/types/index';
+type ProductProps = {
+  category?: string;
+  sort?: string;
+};
 
 export default async function Product({ category, sort }: ProductProps) {
-  const products: ProductType[] = await getAllProductImproved(category, sort);
+  const products: ProductType[] = await getAllProductImproved({category, sort});
 
   return (
     <div className="w-full h-auto grid grid-cols-4 gap-4">
