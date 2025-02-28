@@ -2,6 +2,9 @@ import { ProductProps, ProductType } from "@/types";
 
 export async function getProductById(id: string): Promise<ProductType> {
   const res = await fetch(`https://fakestoreapi.com/products/${id}`);
+  if(!res.ok) {
+    throw new Error(`HTTP Error! Status ${res.status}`);
+  }
   return res.json()
 }
 
