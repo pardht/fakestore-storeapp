@@ -1,14 +1,18 @@
 export const limits = [
     {
-        name: '5',
-        params: '5'
+        name: '4',
+        params: '4'
     },
     {
-        name: '10',
-        params: '10'
+        name: '8',
+        params: '8'
     },
     {
-        name: '15',
-        params: '15'    
+        name: '16',
+        params: '16'    
+    },
+    {
+        name: 'all',
+        params: 'all'
     }
 ]
