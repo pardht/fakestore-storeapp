@@ -6,7 +6,7 @@ import { categories } from '../lib/categories';
 import { limits } from '@/lib/limits';
 import LimitBtn from './ui/LimitBtn';
 
-function categoryLoading() {
+function filterLoading() {
     return (
         <div>
             Loading Categories...
@@ -14,11 +14,10 @@ function categoryLoading() {
     )
 }
 
-export default async function Category() {
-
+export default async function Filter() {
     return (
         <div className='p-3 flex flex-col gap-3 '>
-            <Suspense fallback={categoryLoading()}>
+            <Suspense fallback={filterLoading()}>
                 Category :
                 {categories.map((category) => (
                     <CategoryBtn key={category.params} params={category.params} name={category.name} />
