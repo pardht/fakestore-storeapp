@@ -8,6 +8,10 @@ export const limits = [
         params: '8'
     },
     {
+        name: '12',
+        params: '12'
+    },
+    {
         name: '16',
         params: '16'    
     },
