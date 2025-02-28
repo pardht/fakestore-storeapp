@@ -19,7 +19,7 @@ export default function SortBtn({ params, name }: Option) {
     if (cateInURL) newSearchParams.set('category', cateInURL);
     if (limitInUrl) newSearchParams.set('limit', limitInUrl);
     if (params === 'desc') newSearchParams.set('sort', params);
-    const href = params === 'asc' ? `/?${newSearchParams.toString()}` : params === 'desc' ? `/?${newSearchParams.toString()}` : ''
+    const href = params === sortInURL    ? `/?${newSearchParams.toString()}` : `/?${newSearchParams.toString()}` 
 
     return (
         <div>
