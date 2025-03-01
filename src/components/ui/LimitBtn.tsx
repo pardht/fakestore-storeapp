@@ -9,13 +9,15 @@ export default function LimitBtn({ params, name }: Option) {
     const cateInUrl = searchParams.get('category');
     const sortInUrl = searchParams.get('sort');
     const limitInUrl = searchParams.get('limit');
+    const searchInUrl = searchParams.get('search');
 
     const isActive = params === limitInUrl || (limitInUrl === null && params === 'all');
 
     const newSearchParams = new URLSearchParams();
     if (cateInUrl) newSearchParams.set('category', cateInUrl);
     if (sortInUrl) newSearchParams.set('sort', sortInUrl);
-    if (params === '4' || '8' || '16') newSearchParams.set('limit', params);
+    if (searchInUrl) newSearchParams.set('search', searchInUrl);
+    if (params !== 'all') newSearchParams.set('limit', params);
     if (params === 'all') newSearchParams.delete('limit');
 
     const href = params === limitInUrl ? `/?${newSearchParams.toString()}` : `/?${newSearchParams.toString()}`;
