@@ -14,7 +14,7 @@ export default async function Product({ category, sort, limit, search }: Product
           <ProductCard key={product.id} product={product} />
         ))
       ) : (
-        <p className='bg-sky-300 text-black'>gak nemu product gw </p> // Fallback UI
+        <p className='bg-sky-300 text-black'>gak nemu product gw </p>
       )}
     </div>
   );
