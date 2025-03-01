@@ -8,7 +8,7 @@ export async function getProductById(id: string): Promise<ProductType> {
   return res.json()
 }
 
-export async function getAllProductImproved({ category, sort, limit }: ProductProps): Promise<ProductType[]> {
+export async function getAllProductImproved({ category, sort, limit, search }: ProductProps): Promise<ProductType[]> {
   let url = 'https://fakestoreapi.com/products';
   if (category) {
     url += `/category/${encodeURIComponent(category)}`;
@@ -22,6 +22,10 @@ export async function getAllProductImproved({ category, sort, limit }: ProductPr
   const res = await fetch(url);
   if (!res.ok) {
     throw new Error(`HTTP Error bang! Status ${res.status}`);
+  } 
+  const products = await res.json();
+  if(search) {
+    return products.filter((product: ProductType) => product.title.toLowerCase().includes(search.toLowerCase()));
   }
-  return res.json();
+  return products;
 }
