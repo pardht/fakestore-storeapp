@@ -15,15 +15,9 @@ export default function SearchBar() {
 
   const newSearchParams = new URLSearchParams();
 
-  if(cateInUrl){
-    newSearchParams.set('category', cateInUrl);
-  }
-  if(sortInUrl){
-    newSearchParams.set('sort', sortInUrl);
-  }
-  if(limitInUrl){
-    newSearchParams.set('limit', limitInUrl);
-  }
+  if(cateInUrl)newSearchParams.set('category', cateInUrl);
+  if(sortInUrl) newSearchParams.set('sort', sortInUrl);
+  if(limitInUrl)newSearchParams.set('limit', limitInUrl);
 
   useEffect(() => {
     setQuery(searchParams.get('search') || '');
