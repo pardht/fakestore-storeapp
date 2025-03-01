@@ -11,15 +11,16 @@ export default function SortBtn({ params, name }: Option) {
     const sortInURL = searchParams.get('sort');
     const cateInURL = searchParams.get('category');
     const limitInUrl = searchParams.get('limit');
-
+    const searchInUrl = searchParams.get('search');
 
     const isActive = sortInURL === params || (sortInURL === null && params === 'asc');
 
     const newSearchParams = new URLSearchParams();
     if (cateInURL) newSearchParams.set('category', cateInURL);
     if (limitInUrl) newSearchParams.set('limit', limitInUrl);
+    if (searchInUrl) newSearchParams.set('search', searchInUrl);
     if (params === 'desc') newSearchParams.set('sort', params);
-    const href = params === sortInURL    ? `/?${newSearchParams.toString()}` : `/?${newSearchParams.toString()}` 
+    const href = params === sortInURL ? `/?${newSearchParams.toString()}` : `/?${newSearchParams.toString()}`
 
     return (
         <div>
