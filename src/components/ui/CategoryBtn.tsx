@@ -8,10 +8,12 @@ export default function CategoryBtn({ name, params }: Option) {
   const cateInURL = searchParams.get('category');
   const sortInURL = searchParams.get('sort');
   const limitInUrl = searchParams.get('limit');
+  const searchInUrl = searchParams.get('search');
 
   const newSearchParams = new URLSearchParams();
   if (sortInURL) newSearchParams.set('sort', sortInURL);
   if (limitInUrl) newSearchParams.set('limit', limitInUrl);
+  if (searchInUrl) newSearchParams.set('search', searchInUrl);
   if (params !== cateInURL) newSearchParams.set('category', params);
 
   const href = params === cateInURL ? `/?${newSearchParams.toString()}` : `/?${newSearchParams.toString()}`;
