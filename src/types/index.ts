@@ -34,3 +34,10 @@ export type ProductByIdProps = {
 export type ProductPageProps = {
   params: Promise<{ id: string }>
 }
+
+export type FilterParams = {
+  category?: string;
+  sort?: string;
+  limit?: string;
+  search?: string;
+};
