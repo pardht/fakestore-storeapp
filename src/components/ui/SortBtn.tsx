@@ -9,7 +9,7 @@ import { updateFilterParams, useFilterParams } from '@/lib/filterUtils';
 export default function SortBtn({ params, name }: Option) {
     const currentParams = useFilterParams()
     const isActive = currentParams.sort === params || (currentParams.sort === undefined && params === 'asc')
-    const href = updateFilterParams(currentParams, 'sort', isActive ? params : params) || (name === 'all' ? '/' : '')
+    const href = updateFilterParams(currentParams, 'sort', isActive ? params : params)
 
     return (
         <div>
