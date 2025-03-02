@@ -5,7 +5,7 @@ import { useFilterParams, updateFilterParams } from '@/lib/filterUtils';
 
 export default function CategoryBtn({ name, params }: Option) {
   const currentParams = useFilterParams();
-  const isActive = currentParams.category === name;
+  const isActive = currentParams.category === params;
   const href = updateFilterParams(currentParams, 'category', isActive ? undefined : params);
 
   const XLogo = () => {
