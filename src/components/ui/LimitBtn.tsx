@@ -7,7 +7,7 @@ import { updateFilterParams, useFilterParams } from '@/lib/filterUtils';
 export default function LimitBtn({ params, name }: Option) {
     const currentParams = useFilterParams()
     const isActive = currentParams.limit === name || (currentParams.limit === undefined && name === 'all')
-    const href = updateFilterParams(currentParams, 'limit', isActive ? params : params) || (name === 'all' ? '/' : '')
+    const href = updateFilterParams(currentParams, 'limit', params)
 
     return (
         <div>
