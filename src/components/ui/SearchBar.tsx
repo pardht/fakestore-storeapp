@@ -1,31 +1,18 @@
-// components/SearchBar.tsx
 "use client";
 
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { use, useEffect, useState } from 'react';
+import { updateFilterParams, useFilterParams } from '@/lib/filterUtils';
 
 export default function SearchBar() {
-  const [query, setQuery] = useState('');
+  const { search } = useFilterParams();
+  const currentParams = useFilterParams();
   const router = useRouter();
-  
-  const searchParams = useSearchParams();
-  const cateInUrl = searchParams.get('category');
-  const sortInUrl = searchParams.get('sort');
-  const limitInUrl = searchParams.get('limit');
-
-  const newSearchParams = new URLSearchParams();
-
-  if(cateInUrl)newSearchParams.set('category', cateInUrl);
-  if(sortInUrl) newSearchParams.set('sort', sortInUrl);
-  if(limitInUrl)newSearchParams.set('limit', limitInUrl);
-
-  useEffect(() => {
-    setQuery(searchParams.get('search') || '');
-  }, []);
-
+  const [query, setQuery] = useState(search || '');
 
   const handleSearch = () => {
-    router.push((newSearchParams.toString() !== '' ? `/?${newSearchParams.toString()}&search=${query}` : `/?search=${query}`));
+    const newUrl = updateFilterParams(currentParams, 'search', query);
+    router.push(newUrl);
   };
 
   return (
