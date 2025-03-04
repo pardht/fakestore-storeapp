@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-[#f0ff8f] flex flex-col items-center">
+      <body className=" flex flex-col items-center">
         <TopNavbar />
         <div className="w-full max-w-[1400px] flex gap-3">
         {children}
