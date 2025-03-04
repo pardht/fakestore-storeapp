@@ -35,7 +35,6 @@ export default function Filter() {
                 </button>
                 <ResetBtn/>
             </div>
-            <div className={`w-full h-screen bg-white absolute transition-all duration-1000 ${isOpen ? 'opacity-0 z-[-100]' : ''}`}></div>
             <div className={`px-5 transition-all duration-1000   ${isOpen ? 'h-[600px]' : 'h-0'}`}>
                 <Suspense fallback={filterLoading()}>
                     <div className='pb-6 border-b'>
