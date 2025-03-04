@@ -3,6 +3,8 @@ import Link from 'next/link'
 import React from 'react'
 import { Option } from '@/types'
 import { updateFilterParams, useFilterParams } from '@/lib/filterUtils';
+import { MdRadioButtonChecked, MdRadioButtonUnchecked, } from 'react-icons/md';
+
 
 export default function LimitBtn({ params, name }: Option) {
     const currentParams = useFilterParams()
@@ -12,7 +14,10 @@ export default function LimitBtn({ params, name }: Option) {
     return (
         <div>
             <Link href={href}>
-                <button className={`p-3 bg-amber-300 text-black ${isActive ? 'bg-amber-800' : ''}`}>{name}</button>
+                <button className={`flex items-center gap-[5px] p-[5px]`}>
+                    {isActive ? <MdRadioButtonChecked size={25} className='fill-[#06D6A0]' /> : <MdRadioButtonUnchecked size={25} className='fill-[#06D6A0]' />}
+                    {name}
+                </button>
             </Link>
         </div>
     )
