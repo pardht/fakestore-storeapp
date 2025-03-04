@@ -9,7 +9,7 @@ export default async function Product({ category, sort, limit, search }: Product
   const products: ProductType[] = await getAllProductImproved({ category, sort, limit, search });
 
   return (
-      <div className="w-full h-auto px-2 bg-white grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
+      <div className="w-full min-h-screen h-auto px-2 bg-white grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
         {products.length > 0 ? (
           products.map((product) => (
             <ProductCard key={product.id} product={product} />
