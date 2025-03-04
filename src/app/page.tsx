@@ -13,11 +13,11 @@ export default async function Home({ searchParams }: HomeProps) {
   const searchInUrl = (await searchParams).search
   console.log('in page', searchInUrl)
   return (
-    <div className="flex flex-col gap-3">
+    <div className="w-full h-auto flex flex-col gap-3">
         <ProductsCarousel />
         <SearchBar/>
-      <div className="flex ">
-        <SideBar />
+      <div className="flex flex-col md:flex-row">
+        <SideBar/>
         <Suspense fallback={<LoadProduct />}>
           <Product category={categoryInUrl} sort={sortInUrl} limit={limitInUrl} search={searchInUrl} />
         </Suspense>
