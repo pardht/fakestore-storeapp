@@ -3,8 +3,8 @@ import Filter from './Filter'
 
 export default function SideBar() {
   return (
-    <div className='p-2  w-[400px]  h-auto'>
-        <div className='  h-full  bg-pink-400'>this is SideBar
+    <div className=' w-full  md:w-[400px]  h-auto'>
+        <div className='  h-full '>
             <Filter/>
         </div>
     </div>
