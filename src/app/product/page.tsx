@@ -9,11 +9,11 @@ export default async function page({ searchParams }: HomeProps) {
     const sortInUrl = (await searchParams).sort
     const limitInUrl = (await searchParams).limit
     const searchInUrl = (await searchParams).search
-    console.log('in page', searchInUrl)
+    
     return (
         <div className="w-full h-auto flex flex-col gap-3">
             <div className="flex flex-col md:grid md:grid-cols-8 ">
-                <div className="w-full col-span-2 md:relative">
+                <div className="w-full col-span-2">
                     <SideBar />
                 </div>
                 <div className="col-span-6">
