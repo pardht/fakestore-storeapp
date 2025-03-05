@@ -5,7 +5,7 @@ import { FaSquareInstagram, FaSquarePinterest, FaXTwitter } from 'react-icons/fa
 
 export default function Footer() {
     return (
-        <footer className="border-[1px] rounded-[10px] flex flex-col md:flex-row  ">
+        <footer className="bg-white border-[1px] rounded-[10px] flex flex-col md:flex-row  ">
             <div className="flex-1 p-5 flex flex-col justify-between">
                 <p className="text-black text-sm pb-20">
                     Have questions or feedback? Reach out to us,
