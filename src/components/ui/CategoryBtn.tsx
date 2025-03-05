@@ -12,7 +12,7 @@ export default function CategoryBtn({ name, params }: Option) {
 
   return (
     <Link href={href} >
-      <button className={`flex items-center p-3 gap-[5px]`}>
+      <button className={`flex items-center gap-[5px] transition-all hover:tracking-tight`}>
         {isActive ? <IoIosCloseCircle size={25} className='fill-[#06D6A0]'/> : <MdRadioButtonUnchecked size={25} className='fill-[#06D6A0]'/>}
         {name}
       </button>

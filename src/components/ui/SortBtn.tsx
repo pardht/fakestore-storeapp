@@ -15,7 +15,7 @@ export default function SortBtn({ params, name }: Option) {
         <div>
             <Link href={href}>
                 <button
-                    className={`flex items-center gap-[5px] p-2`}>
+                    className={`flex items-center gap-[5px] transition-all hover:tracking-tight`}>
                     {isActive ? <MdRadioButtonChecked size={25} className='fill-[#06D6A0]' /> : <MdRadioButtonUnchecked size={25} className='fill-[#06D6A0]' />}
                     {name}
                 </button>
