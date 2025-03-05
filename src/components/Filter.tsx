@@ -31,11 +31,12 @@ export default function Filter() {
         <>
             <div className='flex justify-between  p-5'>
                 <button onClick={handleOpen} className='flex items-center gap-[4px] bg-white text-lg font-semibold'>
-                    Filter <LuSettings2 />
+                    <p> Filter </p>
+                    <LuSettings2 />
                 </button>
-                <ResetBtn/>
+                <ResetBtn />
             </div>
-            <div className={`px-5 transition-all duration-1000   ${isOpen ? 'h-[600px]' : 'h-0'}`}>
+            <div className={`px-5 transition-all duration-1000 md:h-auto ${isOpen ? 'h-[600px] ' : 'h-0'}`}>
                 <Suspense fallback={filterLoading()}>
                     <div className='pb-6 border-b'>
                         <p className='pb-5 font-medium'>Category {currentParams.category ? <span className='font-light text-zinc-400'>/ {currentParams.category}</span> : ''}</p>
