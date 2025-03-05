@@ -12,7 +12,7 @@ export default async function page({ searchParams }: HomeProps) {
     
     return (
         <div className="w-full h-auto flex flex-col gap-3">
-            <div className="flex flex-col md:grid md:grid-cols-8 ">
+            <div className="flex flex-col md:grid md:grid-cols-8 md:gap-4">
                 <div className="w-full col-span-2">
                     <SideBar />
                 </div>
