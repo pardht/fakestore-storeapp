@@ -40,15 +40,19 @@ export default function Filter() {
                 <Suspense fallback={filterLoading()}>
                     <div className='pb-6 border-b'>
                         <p className='pb-5 font-medium'>Category {currentParams.category ? <span className='font-light text-zinc-400'>/ {currentParams.category}</span> : ''}</p>
-                        {categories.map((category) => (
-                            <CategoryBtn key={category.params} params={category.params} name={category.name} />
-                        ))}
+                        <div className='space-y-3 flex flex-col'>
+                            {categories.map((category) => (
+                                <CategoryBtn key={category.params} params={category.params} name={category.name} />
+                            ))}
+                        </div>
                     </div>
                     <div className='py-6 border-b'>
                         <p className='pb-5 font-medium'>Sort by {currentParams.sort ? <span className='font-light text-zinc-400'>/ {currentParams.sort}</span> : <span className='font-light text-zinc-400'>/ asc</span>}</p>
-                        {sorts.map((sort) => (
-                            <SortBtn key={sort.params} params={sort.params} name={sort.name} />
-                        ))}
+                        <div className='space-y-3 flex flex-col'>
+                            {sorts.map((sort) => (
+                                <SortBtn key={sort.params} params={sort.params} name={sort.name} />
+                            ))}
+                        </div>
                     </div>
                     <div className='py-6 border-b'>
                         <p className='pb-5 font-medium'>Amount Product {currentParams.limit ? <span className='font-light text-zinc-400'>/ {currentParams.limit}</span> : <span className='font-light text-zinc-400'>/ all</span>}</p>
