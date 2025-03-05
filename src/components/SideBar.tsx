@@ -1,6 +1,5 @@
 import React from 'react'
 import Filter from './Filter'
-import SearchBar from './ui/SearchBar'
 
 export default function SideBar() {
   return (

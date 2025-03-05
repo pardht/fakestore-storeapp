@@ -4,7 +4,6 @@ import { getAllProductImproved } from '@/lib/fetch';
 import { ProductType, } from '@/types/index';
 import { ProductProps } from '@/types/index';
 import NotFound from './ui/NotFound';
-import ProductCarousel from './ui/ProductsCarousel';
 
 export default async function ProductPage({ category, sort, limit, search }: ProductProps) {
   const products: ProductType[] = await getAllProductImproved({ category, sort, limit, search });

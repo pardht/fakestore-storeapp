@@ -13,7 +13,7 @@ export default function Footer() {
                     </p>
                     <p>
                         Reach out to us,
-                        we're here to help. Your thoughts and suggestions
+                        {`we're`} here to help. Your thoughts and suggestions
                         are always welcome!
                     </p>
                 </div>
