@@ -12,16 +12,16 @@ export default function SearchBar() {
   const [query, setQuery] = useState(search || '');
 
   const handleSearch = () => {
-    const newUrl = '/product' + updateFilterParams(currentParams, 'search', query);
+    const newUrl = query ? '/product' + updateFilterParams(currentParams, 'search', query) : '/product'
     router.push(newUrl);
   };
 
   useEffect(() => {
-    handleSearch()
+      handleSearch()
   }, [query])
-console.log('inseearch', query)
+  
   return (
-    <div className='w-[300px] '>
+    <div className='md:w-[300px] '>
         <div className='py-[5px] px-3 flex items-center shadow-black/10 shadow-md rounded-[15px] '>
         <input
           type="text"
