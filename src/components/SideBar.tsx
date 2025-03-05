@@ -1,12 +1,12 @@
 import React from 'react'
 import Filter from './Filter'
+import SearchBar from './ui/SearchBar'
 
 export default function SideBar() {
   return (
-    <div className=' w-full  md:w-[400px]  h-auto'>
-        <div className='  h-full '>
-            <Filter/>
-        </div>
+    <div className='w-auto h-auto'>
+      <SearchBar />
+      <Filter />
     </div>
   )
 }
