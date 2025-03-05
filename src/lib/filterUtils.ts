@@ -34,5 +34,5 @@ export function updateFilterParams(currentParams: FilterParams, key: keyof Filte
     newSearchParams.set(key, value);
   }
 
-  return newSearchParams.toString() ? `?${newSearchParams.toString()}` : '/';
+  return newSearchParams.toString() ? `?${newSearchParams.toString()}` : '/product';
 }
