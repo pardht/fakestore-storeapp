@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import ProductCard from './ui/ProductCard';
 import { getAllProductImproved } from '@/lib/fetch';
 import { ProductType, } from '@/types/index';
