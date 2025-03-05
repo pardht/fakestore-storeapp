@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="w-full max-w-[1400px] flex flex-col mx-auto px-4 bg-white">
-        <div className="pb-4 bg-white">
+        <div className="py-4 bg-white">
           <TopNavbar />
         </div>
         <div className="w-full max-w-[1400px] flex gap-3 bg-white">
