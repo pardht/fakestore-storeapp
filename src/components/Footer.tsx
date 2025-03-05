@@ -7,17 +7,32 @@ export default function Footer() {
     return (
         <footer className="bg-white border-[1px] rounded-[10px] flex flex-col md:flex-row  ">
             <div className="flex-1 p-5 flex flex-col justify-between">
-                <p className="text-black text-sm pb-20">
-                    Have questions or feedback? Reach out to us,
-                    we're here to help. Your thoughts and suggestions
-                    are always welcome!
-                </p>
-                <div className="flex gap-3 opacity-50 items-center">
-                    <FaFacebookSquare size={25} />
-                    <FaSquareInstagram size={25} />
-                    <FaSquarePinterest size={25} />
-                    <FaXTwitter size={20} />
-                    <FaTiktok size={20} />
+                <div className='pb-12'>
+                    <p className="text-black ">
+                        Have questions or feedback?
+                    </p>
+                    <p>
+                        Reach out to us,
+                        we're here to help. Your thoughts and suggestions
+                        are always welcome!
+                    </p>
+                </div>
+                <div className="flex gap-3 items-center text-[#6dcfb5]">
+                    <button className='hover:opacity-70 transition-all'>
+                        <FaFacebookSquare size={25} />
+                    </button>
+                    <button className='hover:opacity-70 transition-all'>
+                        <FaSquareInstagram size={25} />
+                    </button>
+                    <button className='hover:opacity-70 transition-all'>
+                        <FaSquarePinterest size={25} />
+                    </button>
+                    <button className='hover:opacity-70 transition-all'>
+                        <FaXTwitter size={20} />
+                    </button>
+                    <button className='hover:opacity-70 transition-all'>
+                        <FaTiktok size={20} />
+                    </button>
                 </div>
             </div>
             <div className="flex-1 p-5 flex flex-col items-between border-t-[1px] md:border-t-0 md:border-l-[1px]">
@@ -39,7 +54,7 @@ export default function Footer() {
                         </Link>
                     </li>
                 </ul>
-               
+
             </div>
 
             <div className="flex-1  p-5 flex flex-col justify-between border-t-[1px] md:border-t-0 md:border-l-[1px]">
