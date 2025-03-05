@@ -7,7 +7,7 @@ export default function ResetBtn() {
   const currentParams = useFilterParams()
   const hasFilter = currentParams.category || currentParams.sort || currentParams.limit
 
-  const href = currentParams.search ? '/?search=' + currentParams.search : '/'
+  const href = currentParams.search ? '?search=' + currentParams.search : '?'
   return (
     <Link href={href}>
       <button>
