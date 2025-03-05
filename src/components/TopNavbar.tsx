@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import SearchBar from './ui/SearchBar'
 import Link from 'next/link'
 import { IoMdInformationCircleOutline } from 'react-icons/io'
@@ -21,7 +21,9 @@ export default function TopNavbar() {
         </div>
         <div className='flex items-center justify-between gap-3 px-3 pt-2 pb-3'>
           <div className='w-full flex justify-center'>
-            <SearchBar />
+            <Suspense fallback={<div>Loading...</div>}>
+              <SearchBar />
+            </Suspense>
           </div>
           <div className='px-2 md:px-5'>
             <button className='hover:opacity-70 transition-all'>
