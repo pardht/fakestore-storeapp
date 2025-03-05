@@ -5,7 +5,6 @@ import SearchBar from './ui/SearchBar'
 export default function SideBar() {
   return (
     <div className='w-auto h-auto'>
-      <SearchBar />
       <Filter />
     </div>
   )
