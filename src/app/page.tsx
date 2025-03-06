@@ -44,7 +44,7 @@ export default async function Home() {
       <div className="flex flex-col gap-2">
         <Link href="/product?category=electronics">
           <div className="py-2 flex items-end gap-2">
-            <p className="text-xl font-medium">Women's Clothing</p>
+            <p className="text-xl font-medium">{`Women's`} Clothing</p>
             <p className="text-[#06D6A0] font-medium">See more</p>
           </div>
         </Link>
