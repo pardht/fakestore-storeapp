@@ -4,7 +4,7 @@ import Link from 'next/link';
 import React from 'react';
 import { Option } from '@/types/index';
 import { updateFilterParams, useFilterParams } from '@/lib/filterUtils';
-import { MdRadioButtonChecked, MdRadioButtonUnchecked,  } from 'react-icons/md';
+import { MdRadioButtonChecked, MdRadioButtonUnchecked, } from 'react-icons/md';
 
 export default function SortBtn({ params, name }: Option) {
     const currentParams = useFilterParams()
@@ -13,13 +13,15 @@ export default function SortBtn({ params, name }: Option) {
 
     return (
         <div>
-            <Link href={href}>
-                <button
-                    className={`flex items-center gap-[5px] transition-all hover:tracking-tight`}>
-                    {isActive ? <MdRadioButtonChecked size={25} className='fill-[#06D6A0]' /> : <MdRadioButtonUnchecked size={25} className='fill-[#06D6A0]' />}
-                    {name}
-                </button>
-            </Link>
+            <button
+                className={`flex items-center gap-[5px] transition-all hover:tracking-tight`}>
+                <Link href={href}>
+                    <div className='flex gap-2'>
+                        {isActive ? <MdRadioButtonChecked size={25} className='fill-[#06D6A0]' /> : <MdRadioButtonUnchecked size={25} className='fill-[#06D6A0]' />}
+                        {name}
+                    </div>
+                </Link>
+            </button>
         </div>
     );
 }
