@@ -4,8 +4,8 @@ import TopNavbar from "@/components/TopNavbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "freakystore",
-  description: "ss",
+  title: "rilstore",
+  description: "this is a real store.. i thought so",
 };
 
 export default function RootLayout({
