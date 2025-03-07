@@ -13,14 +13,14 @@ export default function SearchBar() {
 
   const handleClear = () => {
     setQuery('');
-    router.push('/product');
+    router.push(`${updateFilterParams(currentParams, 'search', undefined)}`);
   };
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newQuery = e.target.value;
     setQuery(newQuery);
     const newUrl = newQuery 
       ? `/product${updateFilterParams(currentParams, 'search', newQuery)}` 
-      : '/product';
+      : `${updateFilterParams(currentParams, 'search', undefined)}` 
     router.push(newUrl);
   };
 
