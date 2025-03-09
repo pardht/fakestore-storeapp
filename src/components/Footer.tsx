@@ -12,9 +12,7 @@ export default function Footer() {
                         Have questions or feedback?
                     </p>
                     <p>
-                        Reach out to us,
-                        {`we're`} here to help. Your thoughts and suggestions
-                        are always welcome!
+                        Reach out to us, {`we're`} here to help. Your thoughts and suggestions are always welcome!
                     </p>
                 </div>
                 <div className="flex gap-3 items-center text-[#6dcfb5]">
