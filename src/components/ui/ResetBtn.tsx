@@ -10,7 +10,7 @@ export default function ResetBtn() {
   const href = currentParams.search ? '?search=' + currentParams.search : '?'
   return (
     <Link href={href}>
-      <button>
+      <button className='hover:scale-105 transition-all'>
         {hasFilter ? <RiResetLeftFill size={25} className='fill-[#06D6A0]' /> : null}
       </button>
     </Link>
