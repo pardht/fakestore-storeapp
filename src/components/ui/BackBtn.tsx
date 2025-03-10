@@ -1,7 +1,6 @@
 "use client"
 import React from 'react'
 import { IoIosArrowBack } from 'react-icons/io';
-import { IoReturnUpBackOutline } from 'react-icons/io5';
 
 export default function BackBtn() { 
     function goBack(){
