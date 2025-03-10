@@ -1,7 +1,5 @@
 import React from 'react'
-import { AiFillProduct } from 'react-icons/ai'
 import { CgSpinner } from 'react-icons/cg'
-import { FaSpinner, FaTshirt } from 'react-icons/fa'
 
 export default function LoadProduct() {
   return (
@@ -37,7 +35,6 @@ function LoadCard() {
       <div className='w-full h-full flex flex-col items-center justify-center space-y-10'>
         <CgSpinner className='animate-spin hidden md:block md:w-40 md:h-[13.5rem] text-black/20' />
         <CgSpinner size={100} className='animate-spin md:hidden text-black/20' />
-        {/* <div className='w-40 h-60 rounded-[10px] bg-black/5 p-2'></div> */}
         <div className='w-full flex flex-col justify-start items-start px-3 md:p-5 space-y-2'>
           <div className='w-full max-w-[160px] md:max-w-[300px] p-[5px] md:p-2 bg-black/15 rounded-[10px]'></div>
           <div className='w-[80px] md:w-[130px] p-[5px] md:p-2 bg-black/5 rounded-[10px]'></div>
