@@ -22,7 +22,7 @@ export default function Filter() {
   return (
     <>
       <div className='flex justify-between pb-5'>
-        <button onClick={handleOpen} className='flex items-center gap-[4px] bg-white text-lg font-semibold'>
+        <button onClick={handleOpen} className='flex items-center gap-[4px] md:cursor-default bg-white text-lg font-semibold'>
           <p> Filter </p>
           <LuSettings2 />
         </button>
