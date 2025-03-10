@@ -5,10 +5,10 @@ import { ProductPageProps } from '@/types/index'
 
 
 export default async function page({ params }: ProductPageProps) {
-  const {id} = await params;
+  const { id } = await params;
   return (
-    <div>
-      <ProductById params={{id}} />
+    <div className='w-full h-auto'>
+      <ProductById params={{ id }} />
     </div>
   )
 }
