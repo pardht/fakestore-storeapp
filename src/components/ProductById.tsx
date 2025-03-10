@@ -3,8 +3,6 @@ import Image from "next/image";
 import BackBtn from "./ui/BackBtn";
 import { ProductByIdProps, ProductType } from "@/types/index";
 import ProductCard from "./ui/ProductCard";
-import { CiHeart } from "react-icons/ci";
-import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { IoMdHeartEmpty } from "react-icons/io";
 
 
