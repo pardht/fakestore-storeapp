@@ -22,7 +22,7 @@ export default function RootLayout({
         <div className="w-full max-w-[1400px] flex gap-3 mx-auto px-4 bg-white">
           {children}
         </div>
-        <div className="pt-20 pb-4 bg-white">
+        <div className="pt-10 md:pt-20 bg-white">
           <Footer />
         </div>
       </body>
