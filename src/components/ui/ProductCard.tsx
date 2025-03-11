@@ -24,15 +24,16 @@ export default function ProductCard({ product }: ProductCardProps) {
                                     </p>
                                 </div>
                             </div>
-                            <div className='p-3 md:p-5'>
+                            <div className='p-3 md:p-5 flex flex-col md:gap-[4px]'>
+                                <div className='text-sm md:text-xl font-bold flex items-start gap-[2px]'>
+                                    <span className='text-xs md:text-sm font-normal'>$</span>
+                                    {product.price}
+                                </div>
                                 <div className='text-sm md:text-lg font-base transition-all line-clamp-2   group-hover:whitespace-normal'>
                                     {product.title}
                                 </div>
                                 <div className='text-sm md:text-base font-light text-zinc-400'>
                                     {product.category}
-                                </div>
-                                <div className='text-sm md:text-lg font-bold'>
-                                    ${product.price}
                                 </div>
                             </div>
                         </div>
