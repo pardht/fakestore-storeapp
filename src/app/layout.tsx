@@ -15,11 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="w-full max-w-[1400px] flex flex-col mx-auto px-4 bg-white">
-        <div className="py-4 bg-white">
+      <body className="w-full flex flex-col mx-auto bg-white">
+        <div className="pb-4 bg-white">
           <TopNavbar />
         </div>
-        <div className="w-full max-w-[1400px] flex gap-3 bg-white">
+        <div className="w-full max-w-[1400px] flex gap-3 mx-auto px-4 bg-white">
           {children}
         </div>
         <div className="pt-20 pb-4 bg-white">
