@@ -31,6 +31,10 @@ export type ProductCardProps = {
   product: ProductType
 };
 
+export type CarouselProps = {
+  products: ProductType[]
+};
+
 export type ProductByIdProps = {
   params: { id: string }
 };
