@@ -1,4 +1,4 @@
-import { Option } from '../types/index';
+import { Option } from "@/types"; 
 
 export const categories: Option[] = [
     { name: 'Electronics', params: 'electronics' },
