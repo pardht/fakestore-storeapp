@@ -1,4 +1,4 @@
-import { Option } from '../types/index';
+import { Option } from "@/types";
 
 export const sorts: Option[] = [
     { name: 'Ascending: A-Z', params: 'asc' },
