@@ -5,7 +5,6 @@ import { ProductCardProps } from '@/types/index';
 
 export default function ProductCard({ product }: ProductCardProps) {
     return (
-        <div>
             <Link href={`/product/${product.id}`}>
                 <div className='w-full h-full max-h-[23rem] pb-[7rem] relative bg-white rounded-[10px] shadow-xl shadow-[#456d62]/10 group transition-all brightness-[0.95]'>
                     <div className=' h-full flex'>
@@ -40,6 +39,5 @@ export default function ProductCard({ product }: ProductCardProps) {
                     </div>
                 </div>
             </Link>
-        </div>
     )
 }
