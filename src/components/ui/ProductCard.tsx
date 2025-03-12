@@ -16,10 +16,10 @@ export default function ProductCard({ product }: ProductCardProps) {
                         <div className='w-full h-full bottom-0  absolute flex flex-col justify-between rounded-[10px]'>
                             <div className='overflow-clip'>
                                 <div className='pb-12 flex flex-col md:gap-2'>
-                                    <p className={`w-24 md:w-40 text-[10px] md:text-sm font-medium px-[14px] md:px-[20px] ml-[-15px] md:ml-[-20px] -rotate-[35deg] text-white bg-gradient-to-r from-pink-600/80 to-red-800 ${product.rating.count > 400 ? 'block' : 'hidden'}`}>
+                                    <p className={`w-24 md:w-40 text-[10px] md:text-sm font-medium px-[14px] md:px-[20px] ml-[-15px] md:ml-[-20px] -rotate-[35deg] text-white bg-gradient-to-r from-pink-600/80 to-red-800 ${product.rating.count >= 400 ? 'block' : 'hidden'}`}>
                                         Bestseller
                                     </p>
-                                    <p className={`w-28 md:w-40 text-[10px] md:text-sm font-medium px-[14px] md:px-[20px] ml-[-15px] md:ml-[-20px] -rotate-[35deg] text-white bg-gradient-to-r from-amber-400 to-amber-600/80 ${product.rating.rate > 4 ? 'block' : 'hidden'}`}>
+                                    <p className={`w-28 md:w-40 text-[10px] md:text-sm font-medium px-[14px] md:px-[20px] ml-[-15px] md:ml-[-20px] -rotate-[35deg] text-white bg-gradient-to-r from-amber-400 to-amber-600/80 ${product.rating.rate >= 4 ? 'block' : 'hidden'}`}>
                                         Top Rated
                                     </p>
                                 </div>
