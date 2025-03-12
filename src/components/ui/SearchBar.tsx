@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { updateFilterParams, useFilterParams } from '@/lib/filterUtils';
 import { CiSearch } from 'react-icons/ci';
 import { IoIosCloseCircle } from 'react-icons/io';
-import { placeholderValues } from '@/lib/placeholder';
+import { placeholderValues } from '@/lib/data/placeholder';
 
 export default function SearchBar() {
   const { search } = useFilterParams();
