@@ -35,7 +35,6 @@ export default function SearchBar() {
     const randomized = placeholderValues.sort(() => Math.random() - 0.5).slice(0, 1)[0]
     setPlaceholder(randomized)
   },[currentParams.search])
-  console.log('wdajaw', placeholder)
 
   return (
     <div className='w-full'>
