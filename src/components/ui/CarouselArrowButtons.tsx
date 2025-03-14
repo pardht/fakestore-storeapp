@@ -63,7 +63,7 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
         type="button"
         {...restProps}
       >
-        <IoIosArrowBack size={45} className='rounded-full p-2 bg-white hover:opacity-70 transition-all'/>
+        <IoIosArrowBack size={30} className='md:w-[40px] md:h-[40px] rounded-full p-2 bg-white hover:opacity-70 transition-all'/>
         {children}
       </button>
     )
@@ -77,7 +77,7 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
         type="button"
         {...restProps}
       >
-                <IoIosArrowForward size={45} className='rounded-full p-2 bg-white hover:opacity-70 transition-all'/>
+                <IoIosArrowForward size={30} className='md:w-[40px] md:h-[40px] rounded-full p-2 bg-white hover:opacity-70 transition-all'/>
         {children}
       </button>
     )
