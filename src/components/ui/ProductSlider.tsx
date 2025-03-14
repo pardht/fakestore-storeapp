@@ -2,7 +2,7 @@
 
 import useEmblaCarousel from 'embla-carousel-react'
 import { EmblaCarouselType } from 'embla-carousel'
-import React, { useCallback } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import ProductCard from './ProductCard'
 import { CarouselProps } from '@/types'
 import {
@@ -14,6 +14,7 @@ import Link from 'next/link'
 
 
 export default function ProductSlider({ products, label }: CarouselProps) {
+    const [randomizedProducts, setRandomizedProducts] = useState(products)
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
     const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
         const autoplay = emblaApi?.plugins()?.autoplay
@@ -32,6 +33,11 @@ export default function ProductSlider({ products, label }: CarouselProps) {
         onPrevButtonClick,
         onNextButtonClick
     } = usePrevNextButtons(emblaApi, onNavButtonClick)
+
+    useEffect(() => {
+        const randomized = products.sort(() => Math.random() - 0.5)
+        setRandomizedProducts(randomized)
+    }, [products])
     return (
         <div className='relative'>
             <div className='py-4 px-4'>
@@ -44,7 +50,7 @@ export default function ProductSlider({ products, label }: CarouselProps) {
                 <div className='py-10 px-4 bg-white rounded-[10px]'>
                     <div ref={emblaRef} className='overflow-clip relative rounded-[10px]'>
                         <div className='flex relative'>
-                            {products.map((product) => (
+                            {randomizedProducts.map((product) => (
                                 <div key={product.id} className='flex-[0_0_25%] px-2'>
                                     <ProductCard product={product} />
                                 </div>
