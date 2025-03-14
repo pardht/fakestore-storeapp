@@ -10,6 +10,7 @@ import {
     NextButton,
     usePrevNextButtons
 } from './CarouselArrowButtons'
+import Link from 'next/link'
 
 
 export default function ProductSlider({ products, label }: CarouselProps) {
@@ -34,7 +35,12 @@ export default function ProductSlider({ products, label }: CarouselProps) {
     return (
         <div className='relative'>
             <div className='py-4 px-4'>
-                <p className="text-2xl font-semibold py-4 px-2">{label}</p>
+                <div className='py-4 px-2 flex gap-2'>
+                    <p className="text-2xl font-semibold ">{label}</p>
+                    <Link href={`/product?category=${label.toLocaleLowerCase()}`}>
+                        <p className="text-lg font-medium text-[#6dcfb5] transition-all hover:opacity-70 ">See More</p>
+                    </Link>
+                </div>
                 <div className='py-10 px-4 bg-white rounded-[10px]'>
                     <div ref={emblaRef} className='overflow-clip relative rounded-[10px]'>
                         <div className='flex relative'>
