@@ -3,59 +3,74 @@ import Link from "next/link";
 import { categories } from "@/lib/data/categories";
 import Carousel from "@/components/ui/Carousel";
 import ProductSlider from "@/components/ui/ProductSlider";
+import { CiSearch } from "react-icons/ci";
 
 export default async function Home() {
   const electronics = await getAllProductImproved({ category: "electronics", limit: "5" })
   const jewelery = await getAllProductImproved({ category: "jewelery", limit: "5" })
   const mens = await getAllProductImproved({ category: "men's clothing", limit: "5" })
   const womens = await getAllProductImproved({ category: "women's clothing", limit: "5" })
-  const getFetch = await getAllProductImproved({ category: "" })
-  const products = getFetch.filter((product) => product.rating.rate >= 4 && product.rating.count >= 400).sort(() => Math.random() - 0.5).slice(0, 3)
+  const products = await getAllProductImproved({ category: "" })
+  const carouselProducts = products.filter((product) => product.rating.rate >= 4 && product.rating.count >= 400).sort(() => Math.random() - 0.5).slice(0, 3)
   return (
     <div className="w-full h-auto flex flex-col gap-5 md:gap-10">
       <div className="flex flex-col gap-2 md:gap-4">
-        <div className=" rounded-[10px] bg-white flex gap-4">
-          <div className="w-full h-full p-6 px-8 brightness-[0.95] bg-white  rounded-[10px] ">
-            <p className="font-black text-[3rem] text-black">Welcome to the store {`that’s`} definitely not real</p>
-            <p className="font-black text-[3rem] text-[#6dcfb5] underline underline-offset-4">
+        <div className=" rounded-[10px] bg-white flex flex-col md:flex-row gap-2 md:gap-4">
+          <div className="w-full md:h-full p-4 md:p-6 md:px-8 brightness-[0.95] bg-white  rounded-[10px] ">
+            <p className="font-semibold md:font-black text-[1.5rem] md:text-[3rem] text-black">Welcome to the store {`that’s`} definitely not real</p>
+            <p className="font-semibold md:font-black text-[1.5rem] md:text-[3rem] text-[#6dcfb5] underline underline-offset-4">
               <Link href="/product">
                 Start browsing!
               </Link>
             </p>
           </div>
           <div className="  rounded-[10px]">
-            <Carousel products={products} label="" />
+            <Carousel products={carouselProducts} label="" />
           </div>
         </div>
-        <div className="brightness-[0.95] bg-white rounded-[10px] p-4">
-          <div className="grid grid-cols-2 gap-2 md:flex md:gap-3 md:justify-end">
+        <div className="flex flex-col md:flex-row gap-2 md:gap-4">
+          <div className="flex-1 bg-[#70d6bb] rounded-[10px] p-4 flex items-center">
+            {products.sort(() => Math.random() - 0.5).slice(0, 1).map((product) => (
+              <Link className="w-full  group" key={product.id} href={`/product?search=${product.title}`}>
+                <div className='w-full p-2 md:p-3 flex items-center bg-white shadow-black/10 shadow-sm rounded-[15px] '>
+                  <p className="w-full line-clamp-1 text-sm md:text-base md:font-medium group-hover:translate-x-[4px] transition-all">{product.title}</p>
+                  <p>
+                    <CiSearch size={25} />
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className=" bg-[#70d6bb] rounded-[10px] p-4 grid grid-cols-2 gap-2 md:flex md:gap-3 md:justify-end">
             {categories.map((cate) => (
-              <div key={cate.name} className={`flex-1 pt-5 pb-2 px-3 md:pt-7 md:pl-4 md:pr-20 md:pb-2 rounded-[10px] hover:opacity-70 transition-all bg-gradient-to-tr
-              ${cate.params === "electronics" ? "from-green-500  via-teal-500 to-teal-200" :
-                  cate.params === "jewelery" ? "from-yellow-500 via-amber-500 to-amber-200" :
-                    cate.params === "men's clothing" ? "from-blue-500 via-sky-500 to-sky-200" :
-                      cate.params === "women's clothing" ? "from-red-500 via-pink-500 to-pink-200" : ''
-                }`}>
-                <Link href={`/product?category=${cate.params}`}>
-                  <p className="text-white text-xs md:text-base font-medium md:tracking-wide">{cate.name}</p>
-                </Link>
-              </div>
+              <Link className="flex" key={cate.name} href={`/product?category=${cate.params}`}>
+                <div className={`w-full md:w-auto p-3 md:px-10 hover:px-12 transition-all flex justify-center items-end rounded-[10px] bg-white
+              ${cate.params === "electronics" ? "  text-teal-400" :
+                    cate.params === "jewelery" ? " text-amber-400" :
+                      cate.params === "men's clothing" ? "text-sky-400" :
+                        cate.params === "women's clothing" ? " text-pink-400" : ''
+                  }`}>
+                  <p className=" transition-all text-xs md:text-base font-medium ">{cate.name}</p>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
-        <div className=" rounded-[10px] bg-zinc-100">
-            <ProductSlider products={mens} label="Men's Clothing" />
-        </div>
-        <div className=" rounded-[10px] bg-zinc-100">
+        <div className="flex flex-col gap-4">
+          <div className=" rounded-[10px]">
             <ProductSlider products={womens} label="Women's Clothing" />
-        </div>
-        <div className=" rounded-[10px] bg-zinc-100">
+          </div>
+          <div className=" rounded-[10px]">
             <ProductSlider products={electronics} label="Electronics" />
-        </div>
-        <div className=" rounded-[10px] bg-zinc-100">
+          </div>
+          <div className=" rounded-[10px]">
+            <ProductSlider products={mens} label="Men's Clothing" />
+          </div>
+          <div className=" rounded-[10px]">
             <ProductSlider products={jewelery} label="Jewelery" />
+          </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
