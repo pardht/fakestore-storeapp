@@ -6,10 +6,9 @@ import ProductSlider from "@/components/ui/ProductSlider";
 import { CiSearch } from "react-icons/ci";
 
 export default async function Home() {
-  const electronics = await getAllProductImproved({ category: "electronics", limit: "5" })
-  const jewelery = await getAllProductImproved({ category: "jewelery", limit: "5" })
-  const mens = await getAllProductImproved({ category: "men's clothing", limit: "5" })
-  const womens = await getAllProductImproved({ category: "women's clothing", limit: "5" })
+  const productsByCate = await Promise.all( 
+    categories.sort(() => Math.random() - 0.5).map((category) => getAllProductImproved({category: category.params.toString()}))
+  );
   const products = await getAllProductImproved({ category: "" })
   const carouselProducts = products.filter((product) => product.rating.rate >= 4 && product.rating.count >= 400).sort(() => Math.random() - 0.5).slice(0, 3)
   return (
@@ -25,7 +24,7 @@ export default async function Home() {
             </p>
           </div>
           <div className="  rounded-[10px]">
-            <Carousel products={carouselProducts} label="" />
+            <Carousel products={carouselProducts}/>
           </div>
         </div>
         <div className="flex flex-col md:flex-row gap-2 md:gap-4">
@@ -44,31 +43,24 @@ export default async function Home() {
           <div className=" bg-[#70d6bb] rounded-[10px] p-4 grid grid-cols-2 gap-2 md:flex md:gap-3 md:justify-end">
             {categories.map((cate) => (
               <Link className="flex" key={cate.name} href={`/product?category=${cate.params}`}>
-                <div className={`w-full md:w-auto p-3 md:px-10 hover:px-12 transition-all flex justify-center items-end rounded-[10px] bg-white
+                <div className={`w-full md:w-auto p-3 md:px-10 group  md:hover:px-12 transition-all flex justify-center items-end rounded-[10px] bg-white
               ${cate.params === "electronics" ? "  text-teal-400" :
                     cate.params === "jewelery" ? " text-amber-400" :
                       cate.params === "men's clothing" ? "text-sky-400" :
                         cate.params === "women's clothing" ? " text-pink-400" : ''
                   }`}>
-                  <p className=" transition-all text-xs md:text-base font-medium ">{cate.name}</p>
+                  <p className=" transition-all text-xs md:text-base font-medium group-hover:tracking-wide">{cate.name}</p>
                 </div>
               </Link>
             ))}
           </div>
         </div>
         <div className="flex flex-col gap-4">
-          <div className=" rounded-[10px]">
-            <ProductSlider products={womens} label="Women's Clothing" />
+          {productsByCate.map((products, index) => (
+          <div key={index} className=" rounded-[10px]">
+            <ProductSlider products={products} />
           </div>
-          <div className=" rounded-[10px]">
-            <ProductSlider products={electronics} label="Electronics" />
-          </div>
-          <div className=" rounded-[10px]">
-            <ProductSlider products={mens} label="Men's Clothing" />
-          </div>
-          <div className=" rounded-[10px]">
-            <ProductSlider products={jewelery} label="Jewelery" />
-          </div>
+          ))}
         </div>
       </div>
     </div >
