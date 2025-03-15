@@ -32,7 +32,6 @@ export type ProductCardProps = {
 };
 
 export type CarouselProps = {
-  label: string 
   products: ProductType[]
 };
 
