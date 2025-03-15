@@ -13,7 +13,8 @@ import {
 import Link from 'next/link'
 
 
-export default function ProductSlider({ products, label }: CarouselProps) {
+export default function ProductSlider({ products }: CarouselProps) {
+    const thisCategory = products.slice(0,1).map((product) => product.category.charAt(0).toUpperCase() + product.category.slice(1))
     const [randomizedProducts, setRandomizedProducts] = useState(products)
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
     const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
@@ -42,8 +43,8 @@ export default function ProductSlider({ products, label }: CarouselProps) {
         <div className='relative '>
             <div className='flex flex-col gap-2'>
                 <div className='p-5 flex gap-2 bg-zinc-100 rounded-[10px]'>
-                    <p className="md:text-2xl font-semibold ">{label}</p>
-                    <Link href={`/product?category=${label.toLocaleLowerCase()}`}>
+                    <p className="md:text-2xl font-semibold ">{thisCategory}</p>
+                    <Link href={`/product?category=${thisCategory.toString().toLowerCase()}`}>
                         <p className="text-xs md:text-lg font-medium text-[#6dcfb5] transition-all hover:opacity-70 ">See More</p>
                     </Link>
                 </div>
