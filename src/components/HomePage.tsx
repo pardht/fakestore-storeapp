@@ -1,5 +1,4 @@
 import { categories } from "@/lib/data/categories";
-import { heroText } from "@/lib/data/heroText";
 import { getAllProductImproved } from "@/lib/fetch";
 import Link from "next/link";
 import ProductSlider from "./ui/ProductSlider";
