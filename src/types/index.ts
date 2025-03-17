@@ -1,13 +1,30 @@
 export type HomeProps = {
-  searchParams: Promise<{ category?: string }> & Promise<{ sort?: string }> & Promise<{ limit?: string }> & Promise<{ search?: string }>
+  searchParams: Promise<FilterParams>;
 };
 
-export type Option = {
+export type ProductPageProps = {
+  params: Promise<{ id: string }>;
+};
+
+export interface FilterParams {
+  category?: string;
+  sort?: string;
+  limit?: string;
+  search?: string;
+}
+export interface ProductProps {
+  category?: string;
+  sort?: string;
+  limit?: string;
+  search?: string;
+}
+
+export interface Option {
   name: string;
   params: string;
 }
 
-export type ProductType = {
+export interface ProductType {
   id: number;
   title: string;
   price: number;
@@ -17,35 +34,21 @@ export type ProductType = {
   rating: {
     rate: number;
     count: number;
-  }
-};
-
-export type ProductProps = {
-  category?: string;
-  sort?: string;
-  limit?: string;
-  search?: string;
-};
-
-export type ProductCardProps = {
-  product: ProductType
-};
-
-export type CarouselProps = {
-  products: ProductType[]
-};
-
-export type ProductByIdProps = {
-  params: { id: string }
-};
-
-export type ProductPageProps = {
-  params: Promise<{ id: string }>
+  };
 }
 
-export type FilterParams = {
-  category?: string;
-  sort?: string;
-  limit?: string;
-  search?: string;
-};
+export interface ProductCardProps {
+  product: ProductType;
+}
+
+export interface CarouselProps {
+  products: ProductType[];
+}
+
+export interface HomeFilterProps {
+  products: ProductType[];
+}
+
+export interface ProductByIdProps {
+  params: { id: string };
+}
