@@ -5,6 +5,7 @@ import ProductSlider from "./ui/ProductSlider";
 import { CiSearch } from "react-icons/ci";
 import Carousel from "./ui/Carousel";
 import Hero from "./ui/Hero";
+import { Suspense } from "react";
 
 export default async function HomePage() {
   const productsByCate = await Promise.all(
@@ -16,7 +17,9 @@ export default async function HomePage() {
   return (
     <div className="flex flex-col gap-2 md:gap-4">
       <div className=" rounded-[10px] bg-white flex flex-col md:flex-row gap-2 md:gap-4">
+      <Suspense fallback={<p>Loading hero...</p>}>
         <Hero/>
+      </Suspense>
         <div className="  rounded-[10px]">
           <Carousel products={carouselProducts} />
         </div>
