@@ -47,13 +47,21 @@ export default function loading() {
                 <p className="text-xs md:text-lg font-medium text-[#6dcfb5] transition-all hover:opacity-70 text-transparent">See More</p>
               </div>
               <div className='overflow-clip relative rounded-[10px]'>
-                <div className='flex relative'>
+                <div className='md:flex hidden relative'>
                   <div className='flex-[0_0_50%] md:flex-[0_0_25%] px-[4px] md:px-2'>
                     <LoadCard />
                   </div>
                   <div className='flex-[0_0_50%] md:flex-[0_0_25%] px-[4px] md:px-2'>
                     <LoadCard />
                   </div>
+                  <div className='flex-[0_0_50%] md:flex-[0_0_25%] px-[4px] md:px-2'>
+                    <LoadCard />
+                  </div>
+                  <div className='flex-[0_0_50%] md:flex-[0_0_25%] px-[4px] md:px-2'>
+                    <LoadCard />
+                  </div>
+                </div>
+                <div className='md:hidden flex relative'>
                   <div className='flex-[0_0_50%] md:flex-[0_0_25%] px-[4px] md:px-2'>
                     <LoadCard />
                   </div>
@@ -77,13 +85,21 @@ export default function loading() {
                 <p className="text-xs md:text-lg font-medium text-[#6dcfb5] transition-all hover:opacity-70 text-transparent">See More</p>
               </div>
               <div className='overflow-clip relative rounded-[10px]'>
-                <div className='flex relative'>
+                <div className='md:flex hidden relative'>
                   <div className='flex-[0_0_50%] md:flex-[0_0_25%] px-[4px] md:px-2'>
                     <LoadCard />
                   </div>
                   <div className='flex-[0_0_50%] md:flex-[0_0_25%] px-[4px] md:px-2'>
                     <LoadCard />
                   </div>
+                  <div className='flex-[0_0_50%] md:flex-[0_0_25%] px-[4px] md:px-2'>
+                    <LoadCard />
+                  </div>
+                  <div className='flex-[0_0_50%] md:flex-[0_0_25%] px-[4px] md:px-2'>
+                    <LoadCard />
+                  </div>
+                </div>
+                <div className='md:hidden flex relative'>
                   <div className='flex-[0_0_50%] md:flex-[0_0_25%] px-[4px] md:px-2'>
                     <LoadCard />
                   </div>
