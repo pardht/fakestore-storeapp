@@ -1,12 +1,12 @@
 "use client"
 
 import { categories } from '@/lib/data/categories'
-import { HomeFilterProps, ProductType } from '@/types'
+import { ProductsProps, ProductType } from '@/types'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { CiSearch } from 'react-icons/ci'
 
-export default function HomeFilter({ products }: HomeFilterProps) {
+export default function HomeFilter({ products }: ProductsProps) {
     const initial = products[0]
     const [searchValue, setSearchValue] = useState<ProductType>(initial)
 

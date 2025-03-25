@@ -5,9 +5,9 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import Link from 'next/link';
 import Image from 'next/image';
-import { CarouselProps } from '@/types';
+import { ProductsProps } from '@/types';
 
-export default function Carousel({ products }: CarouselProps) {
+export default function Carousel({ products }: ProductsProps) {
     const autoplay = Autoplay({ delay: 3000, stopOnInteraction: false });
     const [emblaRef] = useEmblaCarousel({ loop: true, axis: 'x' }, [autoplay]);
 

@@ -2,10 +2,10 @@ import React from 'react';
 import ProductCard from './ui/ProductCard';
 import { getAllProductImproved } from '@/lib/fetch';
 import { ProductType, } from '@/types/index';
-import { ProductProps } from '@/types/index';
+import { FilterParams } from '@/types/index';
 import NotFound from './ui/NotFound';
 
-export default async function ProductPage({ category, sort, limit, search }: ProductProps) {
+export default async function ProductPage({ category, sort, limit, search }: FilterParams) {
   const products: ProductType[] = await getAllProductImproved({ category, sort, limit, search });
 
   return (
