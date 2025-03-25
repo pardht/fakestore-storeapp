@@ -9,7 +9,7 @@ import {
     PrevButton,
     NextButton,
     usePrevNextButtons
-} from './CarouselArrowButtons'
+} from './SliderArrowButtons'
 import Link from 'next/link'
 
 
