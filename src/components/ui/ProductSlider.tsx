@@ -4,16 +4,16 @@ import useEmblaCarousel from 'embla-carousel-react'
 import { EmblaCarouselType } from 'embla-carousel'
 import React, { useCallback, useEffect, useState } from 'react'
 import ProductCard from './ProductCard'
-import { CarouselProps } from '@/types'
+import { ProductsProps } from '@/types'
 import {
     PrevButton,
     NextButton,
     usePrevNextButtons
-} from './SliderArrowButtons'
+} from  './SliderArrowButtons'
 import Link from 'next/link'
 
 
-export default function ProductSlider({ products }: CarouselProps) {
+export default function ProductSlider({ products }: ProductsProps) {
     const thisCategory = products.slice(0,1).map((product) => product.category.charAt(0).toUpperCase() + product.category.slice(1))
     const [randomizedProducts, setRandomizedProducts] = useState(products)
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
