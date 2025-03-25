@@ -1,6 +1,6 @@
-import { ProductProps, ProductType } from "@/types";
+import { FilterParams, ProductType } from "@/types";
 
-export async function getAllProductImproved({ category, sort, limit, search }: ProductProps): Promise<ProductType[]> {
+export async function getAllProductImproved({ category, sort, limit, search }: FilterParams): Promise<ProductType[]> {
   let url = 'https://fakestoreapi.com/products';
   if (category) {
     url += `/category/${encodeURIComponent(category)}`;
