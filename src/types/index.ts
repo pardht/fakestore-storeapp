@@ -2,27 +2,24 @@ export type HomeProps = {
   searchParams: Promise<FilterParams>;
 };
 
-export type ProductPageProps = {
-  params: Promise<{ id: string }>;
-};
-
 export interface FilterParams {
   category?: string;
   sort?: string;
   limit?: string;
   search?: string;
-}
-export interface ProductProps {
-  category?: string;
-  sort?: string;
-  limit?: string;
-  search?: string;
-}
+};
+
+export type ProductPageProps = {
+  params: Promise<{ id: string }>;
+};
+
+
+
 
 export interface Option {
   name: string;
   params: string;
-}
+};
 
 export interface ProductType {
   id: number;
@@ -35,20 +32,22 @@ export interface ProductType {
     rate: number;
     count: number;
   };
-}
+};
 
 export interface ProductCardProps {
   product: ProductType;
-}
+};
 
-export interface CarouselProps {
+export interface ProductsProps {
   products: ProductType[];
-}
+};
 
-export interface HomeFilterProps {
-  products: ProductType[];
-}
+export interface RandomizedSliderProps {
+  initialProductsByCate: ProductType[][];
+};
+
+
 
 export interface ProductByIdProps {
   params: { id: string };
-}
+};
