@@ -58,7 +58,7 @@ export default function ProductSlider({ products }: ProductsProps) {
                     </div>
                 </div>
             </div>
-            <div className="absolute right-0 top-0 flex gap-[4px] md:gap-3 p-4 transition-all ">
+            <div className={randomizedProducts.length > 4 ? `absolute right-0 top-0 flex gap-[4px] md:gap-3 p-4 transition-all ` : `hidden`}>
                 <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
                 <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
             </div>
