@@ -13,7 +13,7 @@ export default async function Home() {
   const products = await getAllProductImproved({ category: "" })
   const carouselProducts = products.filter((product) => product.rating.rate >= 4 && product.rating.count >= 400).slice(0, 3)
   return (
-    <div className="flex flex-col gap-2 md:gap-4">
+    <div className="w-full flex flex-col gap-2 md:gap-4">
       <div className=" rounded-[10px] bg-white flex flex-col md:flex-row gap-2 md:gap-4">
         <Suspense fallback={<p>Loading hero...</p>}>
           <Hero />
