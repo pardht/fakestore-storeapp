@@ -58,7 +58,7 @@ export default function Footer() {
 
                 <div className="flex-1  p-5 flex flex-col justify-between border-t-[1px] md:border-t-0 md:border-l-[1px]">
                     <p className="font-black text-xl pb-20">Rilstore.</p>
-                    <p className="opacity-50 tracking-wide text-sm font-light">Copyright © 2025 Rilstore. All rights reserved.</p>
+                    <p className="opacity-50 tracking-wide text-sm font-light">Copyright © 2025 <Link className='hover:text-blue-700 transition-all' href="https://github.com/pardht">Pardht</Link>. All rights reserved.</p>
                 </div>
             </div>
         </footer>
