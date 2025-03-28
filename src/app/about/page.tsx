@@ -19,7 +19,7 @@ export default function page() {
 
                 {/* <!-- Purpose Section --> */}
                 <h2 className="text-2xl font-semibold mt-8 mb-4">Purpose</h2>
-                <p className="mb-4">The primary purpose of Rilstore is to offer a stress-free and entertaining platform for users to engage in simulated shopping activities. Whether users are seeking a moment of relaxation, a distraction from daily responsibilities, or simply the joy of exploring an eclectic product catalog, Rilstore provides a whimsical alternative to conventional e-commerce. It is designed to evoke curiosity and amusement, encouraging users to question, "Do I actually need this?" as they navigate its offerings.</p>
+                <p className="mb-4">The primary purpose of Rilstore is to offer a {"stress-free"} and entertaining platform for users to engage in simulated shopping activities. Whether users are seeking a moment of relaxation, a distraction from daily responsibilities, or simply the joy of exploring an eclectic product catalog, Rilstore provides a whimsical alternative to conventional e-commerce. It is designed to evoke curiosity and amusement, encouraging users to question, {`"Do I actually need this?"`} as they navigate its offerings.</p>
 
                 {/* <!-- Technology Section --> */}
                 <h2 className="text-2xl font-semibold mt-8 mb-4">Technology</h2>
@@ -28,9 +28,9 @@ export default function page() {
                     <li><strong>Next.js</strong>: A React framework that enables server-side rendering and static site generation, optimizing performance and scalability.</li>
                     <li><strong>TypeScript</strong>: A statically typed superset of JavaScript that enhances code quality, maintainability, and developer productivity.</li>
                     <li><strong>Tailwind CSS</strong>: A utility-first CSS framework that facilitates rapid and consistent design implementation, ensuring an intuitive and aesthetically pleasing interface.</li>
-                    <li><strong>FakeStore API</strong>: The backbone of Rilstore’s product catalog, providing a diverse array of mock products to populate the application.</li>
+                    <li><strong>FakeStore API</strong>: The backbone of {"Rilstore’s"} product catalog, providing a diverse array of mock products to populate the application.</li>
                 </ul>
-                <p className="mb-4">Together, these tools—often referred to as the "holy trinity of web development" in the project’s informal origins—form the foundation of Rilstore’s technical architecture.</p>
+                <p className="mb-4">Together, these tools—often referred to as the {`"holy trinity of web development"`} in the {"project’s"} informal {"origins—form"} the foundation of {"Rilstore’s"} technical architecture.</p>
 
                 {/* <!-- Features Section --> */}
                 <h2 className="text-2xl font-semibold mt-8 mb-4">Features</h2>
