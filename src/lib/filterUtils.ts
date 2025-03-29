@@ -1,13 +1,7 @@
 "use client";
 
+import { FilterParams } from '@/types';
 import { useSearchParams } from 'next/navigation';
-
-export type FilterParams = {
-  category?: string;
-  sort?: string;
-  limit?: string;
-  search?: string;
-};
 
 export function useFilterParams(): FilterParams {
   const searchParams = useSearchParams();
@@ -19,7 +13,7 @@ export function useFilterParams(): FilterParams {
   };
 }
 
-export function updateFilterParams(currentParams: FilterParams, key: keyof FilterParams, value?: string): string {
+export function updateFilterParams(currentParams: FilterParams, key: keyof FilterParams, value?: string) {
   const newSearchParams = new URLSearchParams();
 
   for (const [paramKey, paramValue] of Object.entries(currentParams)) {
