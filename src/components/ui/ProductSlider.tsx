@@ -12,7 +12,6 @@ import {
 } from  './SliderArrowButtons'
 import Link from 'next/link'
 
-
 export default function ProductSlider({ products }: ProductsProps) {
     const thisCategory = products.slice(0,1).map((product) => product.category.charAt(0).toUpperCase() + product.category.slice(1))
     const [randomizedProducts, setRandomizedProducts] = useState(products)

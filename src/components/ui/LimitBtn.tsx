@@ -5,7 +5,6 @@ import { Option } from '@/types'
 import { updateFilterParams, useFilterParams } from '@/lib/filterUtils';
 import { MdRadioButtonChecked, MdRadioButtonUnchecked, } from 'react-icons/md';
 
-
 export default function LimitBtn({ params, name }: Option) {
     const currentParams = useFilterParams()
     const isActive = currentParams.limit === name || (currentParams.limit === undefined && name === 'all')

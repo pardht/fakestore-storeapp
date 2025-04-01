@@ -6,9 +6,6 @@ import ProductCard from "./ui/ProductCard";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { FaStar } from "react-icons/fa";
 
-
-
-
 export default async function ProductPage({ params }: ProductByIdProps) {
     const detail = await getProductById((await params).id);
     const similarProducts = await getSimilarProduct(detail.category)

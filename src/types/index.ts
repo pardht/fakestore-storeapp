@@ -13,9 +13,6 @@ export type ProductPageProps = {
   params: Promise<{ id: string }>;
 };
 
-
-
-
 export interface Option {
   name: string;
   params: string;
