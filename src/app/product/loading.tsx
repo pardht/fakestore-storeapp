@@ -7,7 +7,7 @@ export default function loading() {
   return (
     <div className="w-full h-auto flex flex-col gap-3">
       <div className="flex flex-col md:grid md:grid-cols-8 md:gap-4">
-        <div className="w-full col-span-2">
+        <div className="w-full col-span-2 ">
           <div className='w-auto h-auto'>
             <div className='flex justify-between pb-5'>
               <button className='flex items-center gap-[4px] md:cursor-default bg-white text-lg font-semibold'>
@@ -15,7 +15,7 @@ export default function loading() {
                 <LuSettings2 />
               </button>
             </div>
-            <div className={`transition-all duration-1000 md:h-auto`}>
+            <div className={`transition-all duration-1000 md:h-auto hidden md:block`}>
               <div className='px-4 pb-6 border-b'>
                 <p className='pb-5 font-medium'>Category</p>
                 <div className='space-y-3 flex flex-col'>

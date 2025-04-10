@@ -1,8 +1,6 @@
 import ProductPage from "@/components/ProductPage";
 import SideBar from "@/components/SideBar";
-import LoadProduct from "@/components/ui/LoadProduct";
 import { HomeProps } from "@/types";
-import { Suspense } from "react";
 
 export default async function page({ searchParams }: HomeProps) {
     const categoryInUrl = (await searchParams).category
@@ -17,9 +15,7 @@ export default async function page({ searchParams }: HomeProps) {
                     <SideBar />
                 </div>
                 <div className="col-span-6">
-                    <Suspense fallback={<LoadProduct />}>
                         <ProductPage category={categoryInUrl} sort={sortInUrl} limit={limitInUrl} search={searchInUrl} />
-                    </Suspense>
                 </div>
             </div>
         </div>
